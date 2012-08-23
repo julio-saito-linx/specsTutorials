@@ -9,6 +9,9 @@ RSpec.configure do |config|
 	# Pode ser :rspec, :mocha, :rr, :flexmock, :none
 	config.mock_framework = :rspec
 
+    # Use the specified formatter
+    config.formatter = :documentation # :progress, :html, :textmate
+
     # Ativa o modo de debug.
 	# É necessário ter o ruby-debug instalado.
 	config.debug = false
@@ -28,18 +31,18 @@ RSpec.configure do |config|
 
     # Inclui um módulo. Os métodos desse módulo estarão disponíveis no
 	# contexto dos métodos `it`, `specify`, `before`, `after` e `around`.
-	config.include Module.new
+	#config.include Module.new
 
     # Inclui um módulo somente nos grupos que casarem o padrão
 	# especificado pela opção `:file_path`. Esses arquivos irão
 	# ser definidos como sendo do tipo `:foo`, e irão carregar
 	# somente módulos deste tipo.
-	config.include Module.new, :type => :foo, :example_group => {:file_path => /spec\/robots/}
+	#config.include Module.new, :type => :foo, :example_group => {:file_path => /spec\/robots/}
 
     # Estende o grupo de exemplos com o módulo especificado.
 	# Os métodos deste módulo estão disponíveis no contexto
 	# dos métodos `describe` e `context`.
-	config.extend Module.new
+	#config.extend Module.new
 
     # Executa o bloco antes de cada exemplo de um grupo.
 	config.before {}
@@ -60,7 +63,7 @@ RSpec.configure do |config|
 	config.fail_fast = true
 
     # Executa somente os exemplos que possuirem o filtro `:slow`.
-	config.filter_run :slow => true
+	#config.filter_run :slow => true
 
     # Não executa os exemplos caso o bloco retorne um valor que seja
 	# avaliado como `true`.
